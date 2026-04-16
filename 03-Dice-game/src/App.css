@@ -51,3 +51,124 @@
   align-items: center;
   justify-content: center;
 }
+
+
+
+/* game page */
+
+
+.game-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 84px;
+  margin: 0 auto;
+}
+
+
+.header-container{
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.score-container{
+  min-width: 135px;
+  width: 100%;
+  min-height: 151px;
+  margin: 0 auto;
+}
+
+.score-container h1{
+  font-size: 60px;;
+}
+
+.number-container{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.button-container{
+  display: flex;
+  gap: 12px;
+}
+
+
+/* Dice Box */
+
+.dicebox-container{
+  /* border: 2px solid darkred; */
+  min-height: 450px;
+  max-width: 250px;
+  width:100%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:48px;
+}
+
+.dicebox-container img{
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.dicebox-image{
+  /* border: 2px solid rgb(44, 166, 185); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dicebox-image p{
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  font-weight: 500;
+}
+
+.dicebox-buttons{
+  /* border: 2px solid hotpink; */
+  max-width: 220px;
+  width: 100%;
+  min-height: 112px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dicebox-buttons button{
+  min-height: 44px;
+  max-width: 220px;
+  width:100%;
+  border-radius: 8px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+
+/* Rules */
+.rules-container{
+  background-color: #FBF1F1;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.rules{
+  display: flex;
+  flex-direction: column;
+  gap:4px;
+}
+
+.rules p{
+  margin:0
+}
