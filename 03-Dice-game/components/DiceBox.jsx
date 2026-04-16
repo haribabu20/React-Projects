@@ -10,10 +10,17 @@ const DiceBox = () => {
 
   const handleToggle = () => {
     setToggle(prev => !prev)
+    setTimeout(()=>{
+      document.getElementById('rules').scrollIntoView({behaviour:'smooth'})
+    },100)
   }
 
   const handleReset = () => {
     setScore(0);
+  }
+
+  const handleCloseButton = () => {
+    setToggle(prev => !prev)
   }
 
   return (
@@ -30,7 +37,12 @@ const DiceBox = () => {
           <Button text='Show Rules' outline={false} onClick={handleToggle}/>
         </div>
       </div>    
-      {toggle && <Rules/>}
+      {toggle && (
+          <div id='rules'>
+            <Rules onClose={handleCloseButton}/>
+          </div>
+        )
+      }
     </>
 
   )

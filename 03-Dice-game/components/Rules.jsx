@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Rules = () => {
+const Rules = ({onClose}) => {
   return (
     <div className='rules-container'>
-
+      <button onClick={onClose}>
+        ❌
+      </button>
       <h3>How to play dice game</h3>
       <div className='rules'>
         <p>Select any number</p>
