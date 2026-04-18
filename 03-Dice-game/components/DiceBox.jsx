@@ -3,7 +3,7 @@ import '../src/App.css'
 import Button from './Button'
 import Rules from './Rules'
 
-const DiceBox = ({dicecube, setDicecube, selected, setSelected, setScore}) => {
+const DiceBox = ({dicecube, setDicecube, selected, setSelected, setScore, handleDiceCube}) => {
 
   const [toggle, setToggle] = useState(false);
   
@@ -22,22 +22,6 @@ const DiceBox = ({dicecube, setDicecube, selected, setSelected, setScore}) => {
     setToggle(prev => !prev)
   }
 
-  const handleDiceCube = () => {
-    if(selected===null){
-      alert("Please Click the number first !!")
-    };
-
-    const randomNumber = Math.floor(Math.random() * 6) + 1;
-    setDicecube(randomNumber);
-
-    if(selected===dicecube){
-      setScore(prev => prev + dicecube)
-    }else{
-      setScore(prev => prev - dicecube)
-    }
-
-    setSelected(null);
-  }
 
   return (
     <>

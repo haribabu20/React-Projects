@@ -33,7 +33,7 @@ const Number = ({selected, setSelected}) => {
         'align-self': 'flex-end',
         'font-size': '24px',
       }}>
-        Selected Number : {selected}
+        Selected Number {selected}
       </h4>
 
     </div>
