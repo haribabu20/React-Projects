@@ -3,14 +3,14 @@ import '../src/App.css'
 import Score from './Score'
 import Number from './Number'
 
-const Header = () => {
+const Header = ({selected, setSelected, score, setScore}) => {
   return (
     <div className='header-container'>
       <div className='score-card'>
-        <Score/>
+        <Score score={score} setScore={setScore} />
       </div>
       <div className='number-card'>
-        <Number/>
+        <Number selected={selected} setSelected={setSelected}/>
       </div>
     </div>
   )

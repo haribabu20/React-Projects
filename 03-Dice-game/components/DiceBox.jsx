@@ -3,12 +3,10 @@ import '../src/App.css'
 import Button from './Button'
 import Rules from './Rules'
 
-const DiceBox = () => {
+const DiceBox = ({dicecube, setDicecube, selected, setSelected, setScore}) => {
 
   const [toggle, setToggle] = useState(false);
-  const [score, setScore] = useState(null)
-  const [dicecube, setDicecube] = useState(2);
-
+  
   const handleToggle = () => {
     setToggle(prev => !prev)
     setTimeout(()=>{
@@ -25,8 +23,20 @@ const DiceBox = () => {
   }
 
   const handleDiceCube = () => {
+    if(selected===null){
+      alert("Please Click the number first !!")
+    };
+
     const randomNumber = Math.floor(Math.random() * 6) + 1;
     setDicecube(randomNumber);
+
+    if(selected===dicecube){
+      setScore(prev => prev + dicecube)
+    }else{
+      setScore(prev => prev - dicecube)
+    }
+
+    setSelected(null);
   }
 
   return (
@@ -35,7 +45,7 @@ const DiceBox = () => {
 
         <div className='dicebox-image' onClick={handleDiceCube}>
           <img src={`./public/dice_${dicecube}.png`} />
-          <p>Click on Dice to roll {dicecube}</p>
+          <p>Click on Dice to roll</p>
         </div>
 
         <div className='dicebox-buttons'>

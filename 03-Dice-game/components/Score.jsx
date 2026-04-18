@@ -1,9 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
 
-const Score = () => {
-
-  const [score, setScore] = useState(0)
+const Score = ({score, setScore}) => {
 
   return (
     <div className='score-container'>

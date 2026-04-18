@@ -1,9 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
 
-const Number = () => {
-
-  const [selected, setSelected] = useState(null)
+const Number = ({selected, setSelected}) => {
 
   return (
     <div className='number-container'>
@@ -35,7 +33,7 @@ const Number = () => {
         'align-self': 'flex-end',
         'font-size': '24px',
       }}>
-        Select Number {selected}
+        Selected Number : {selected}
       </h4>
 
     </div>
