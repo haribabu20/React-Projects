@@ -35,7 +35,7 @@ const Number = () => {
         'align-self': 'flex-end',
         'font-size': '24px',
       }}>
-        Select Number
+        Select Number {selected}
       </h4>
 
     </div>
