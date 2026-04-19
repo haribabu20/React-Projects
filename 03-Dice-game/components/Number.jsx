@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
 
-const Number = ({selected, setSelected}) => {
+const Number = ({selected, setSelected, result}) => {
 
   return (
     <div className='number-container'>
@@ -29,11 +29,13 @@ const Number = ({selected, setSelected}) => {
       </div>
 
       <h4 style={{
-        display: 'flex',
-        'align-self': 'flex-end',
+        'display': 'flex',
+        'align-self': 'center',
         'font-size': '24px',
+        color: result === null ? 'blue' : (result ? 'green' : 'red')
+        
       }}>
-        Selected Number {selected}
+        {result === null ? 'Start Game' : (result ? 'Won' : 'Lost')}
       </h4>
 
     </div>

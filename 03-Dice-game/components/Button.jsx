@@ -2,7 +2,7 @@ import React from 'react'
 
 const Button = ({text, outline, onClick}) => {
   return (
-    <div>
+    
       <button style={{
         background: outline ? 'black' : 'white',
         color: outline ? 'white' : 'black',
@@ -11,7 +11,7 @@ const Button = ({text, outline, onClick}) => {
       >
         {text}
       </button>
-    </div>
+    
   )
 }
 

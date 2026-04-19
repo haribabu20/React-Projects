@@ -183,3 +183,17 @@
 .rules p{
   margin:0
 }
+
+.loginBack-button{
+  display: flex;
+  align-items: center;
+}
+
+.loginBack-button button {
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+
+
