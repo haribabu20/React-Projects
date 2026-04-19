@@ -25,7 +25,7 @@ const Game = () => {
     if(selected===randomNumber){
       setScore(prev => prev + randomNumber)
     }else{
-      setScore(prev => prev - randomNumber)
+      setScore(prev => prev - 2)
     };
 
     // result text
@@ -65,6 +65,6 @@ export default Game
     }
   
 
-    
+
 
  */
