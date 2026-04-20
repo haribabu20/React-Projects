@@ -6,18 +6,18 @@ import Button from './Button'
 
 const Header = ({selected, setSelected, score, setScore, handleBackToMenu, result}) => {
   return (
-    <div className='header-container'>
-      <div className='score-card'>
+    <header className='header-container'>
+      <section className='score-card'>
         <Score score={score} setScore={setScore} />
-      </div>
-      <div className='number-card'>
+      </section>
+      <section className='number-card'>
         <Number selected={selected} setSelected={setSelected} result={result}/>
-      </div>
-      <div className='loginBack-button'>
+      </section>
+      <section className='loginBack-button'>
         <Button text='Back to Login' onClick={handleBackToMenu} outline/>
-      </div>
+      </section>
       
-    </div>
+    </header>
   )
 }
 

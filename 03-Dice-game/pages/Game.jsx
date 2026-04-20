@@ -40,10 +40,10 @@ const Game = () => {
   }
 
   return (
-    <div className='game-container'>
+    <main className='game-container'>
       <Header selected={selected} setSelected={setSelected} score={score} setScore={setScore} handleBackToMenu={handleBackToMenu} result={result}/>
       <DiceBox dicecube={dicecube} setDicecube={setDicecube} selected={selected} setSelected={setSelected} setScore={setScore} handleDiceCube={handleDiceCube}/>
-    </div>
+    </main>
   )
 }
 

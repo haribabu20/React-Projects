@@ -25,24 +25,24 @@ const DiceBox = ({dicecube, setDicecube, selected, setSelected, setScore, handle
 
   return (
     <>
-      <div className='dicebox-container'>
-
+      <section className='dicebox-container'>
         <div className='dicebox-image' onClick={handleDiceCube}>
           <img src={`./public/dice_${dicecube}.png`} />
           <p>Click on Dice to roll</p>
         </div>
-
         <div className='dicebox-buttons'>
           <Button text='Reset Score' outline onClick={handleReset}/>
           <Button text='Show Rules' outline={false} onClick={handleToggle}/>
         </div>
-      </div>    
+      </section>  
+
       {toggle && (
           <div id='rules'>
             <Rules onClose={handleCloseButton}/>
           </div>
         )
       }
+      
     </>
 
   )

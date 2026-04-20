@@ -2,7 +2,7 @@ import React from 'react'
 
 const Rules = ({onClose}) => {
   return (
-    <div className='rules-container'>
+    <aside className='rules-container'>
       <button onClick={onClose}>
         ❌
       </button>
@@ -14,7 +14,7 @@ const Rules = ({onClose}) => {
         <p>if you get wrong guess then  2 point will be dedcuted </p>
       </div>
 
-    </div>
+    </aside>
   )
 }
 
