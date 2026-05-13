@@ -1,5 +1,5 @@
 import React from 'react'
-import '../src/App.css'
+import '../App.css'
 import Score from './Score'
 import Number from './Number'
 import Button from './Button'

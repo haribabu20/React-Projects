@@ -1,5 +1,5 @@
 import Button from '../components/Button';
-import '../src/App.css'
+import '../App.css'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
