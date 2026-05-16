@@ -1,3 +1,21 @@
+/* pseudo-class == :root == Global variable declaration  */
+:root {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --black: #000000;
+  --white: #ffffff;
+  --blue:  #0000ff;
+  --green: #008000;
+  --red: #ff0000;
+  --rules: #FBF1F1;
+}
+
+[data-theme="dark"] {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+
 /* ================= RESET ================= */
 
 * {
@@ -11,18 +29,11 @@
 body {
   font-family: sans-serif;
   line-height: 1.5;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  transition: all 0.3s ease;
 }
 
-
-/* pseudo-class == :root == Global variable declaration  */
-:root {
-  --black: #000000;
-  --white: #ffffff;
-  --blue:  #0000ff;
-  --green: #008000;
-  --red: #ff0000;
-  --rules: #FBF1F1;
-}
 
 /* ================= LOGIN PAGE ================= */
 
@@ -31,7 +42,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: #000000; */
 }
 
 .container{
@@ -139,9 +149,9 @@ body {
   width: 72px;
   height: 72px;
   cursor: pointer;
-  border: 1px solid var(--black);
-  background: var(--white);
-  color: black;
+  border: 1px solid var(--bg-color);
+  background: var(--bg-color);
+  color: var(--text-color);
   font-size: 20px;
   font-weight: bold;
 
@@ -149,12 +159,13 @@ body {
 }
 
 .number-btn:hover {
-  background: var(--white);
+  background: var(--text-color);
+  color: var(--bg-color);
 }
 
 .number-btn.active {
-  background: var(--black);
-  color: var(--white);
+  background: var(--text-color);
+  color: var(--bg-color);
 }
 
 .number-btn:active {
@@ -237,8 +248,8 @@ body {
 }
 
 .dicebox-buttons button:hover{
-  background-color: var(--black);
-  color: var(--white)
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 
@@ -263,7 +274,7 @@ body {
   position:absolute;
   top: 10px;
   right: 10px;
-  background: var(--white);
+  background: var(--text-color);
   padding: 6px 10px;
   border-radius: 4px;
   cursor: pointer;

@@ -3,6 +3,7 @@ import '../App.css'
 import Score from './Score'
 import Number from './Number'
 import Button from './Button'
+import ThemeToggle from './ThemeToggle'
 
 const Header = ({selected, setSelected, score, setScore, handleBackToMenu, result}) => {
   return (
@@ -12,6 +13,9 @@ const Header = ({selected, setSelected, score, setScore, handleBackToMenu, resul
       </section>
       <section className='number-card'>
         <Number selected={selected} setSelected={setSelected} result={result}/>
+      </section>
+      <section>
+        <ThemeToggle/>
       </section>
       <section className='loginBack-button'>
         <Button text='Back to Login' onClick={handleBackToMenu} outline/>
