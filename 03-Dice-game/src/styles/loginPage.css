@@ -1,0 +1,68 @@
+
+/* ================= LOGIN PAGE ================= */
+
+.login-page{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  max-width: 1182px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 40px; /* ✅ added spacing */
+}
+
+.left img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.right{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* ✅ changed from space-between */
+  gap: 16px;
+}
+
+.right h1{
+  font-weight:600;
+  font-size: 66px;
+}
+
+/*
+
+
+.right button{
+  background-color: var(--black);
+  color: var(--white);
+  padding: 10px 20px;
+  font-weight:bold;
+  margin-top: auto;
+  align-self: flex-end;
+
+  height: 44px;
+  max-width: 220px; 
+  width:100%;
+
+  border-radius: 8px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s ease;
+}
+
+.right button:hover{
+  opacity: 0.85;
+}
+
+
+/*

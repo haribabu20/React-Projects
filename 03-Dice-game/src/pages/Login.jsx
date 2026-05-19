@@ -1,6 +1,7 @@
 import Button from '../components/Button';
-import '../App.css'
+import '../styles/loginPage.css'
 import { useNavigate } from 'react-router-dom'
+import '../App.css'
 
 const Login = () => {
 

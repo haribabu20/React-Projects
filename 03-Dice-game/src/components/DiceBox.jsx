@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import '../App.css'
+import '../styles/gamePage.css'
 import Button from './Button'
 import Rules from './Rules'
 
@@ -32,7 +32,7 @@ const DiceBox = ({dicecube, setDicecube, selected, setSelected, setScore, handle
         </div>
         <div className='dicebox-buttons'>
           <Button text='Reset Score' outline onClick={handleReset}/>
-          <Button text='Show Rules' outline={false} onClick={handleToggle}/>
+          <Button text='Show Rules' outline onClick={handleToggle}/>
         </div>
       </section>  
 

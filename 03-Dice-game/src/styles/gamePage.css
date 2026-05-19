@@ -1,0 +1,214 @@
+
+/* ================= GAME PAGE ================= */
+
+.game-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 84px;
+
+  max-width: 1280px; /* ✅ added */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header-container{
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.score-container{
+  min-width: 135px;
+  min-height: 151px;
+  text-align: center;
+}
+
+.score-container h1{
+  font-size: 60px;
+}
+
+.number-container{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.number_button-container{
+  display: flex;
+  gap: 12px;
+}
+
+
+/* ================= NUMBER BUTTON ================= */
+
+.number-btn {
+  width: 72px;
+  height: 72px;
+  cursor: pointer;
+  border: 1px solid var(--bg-color);
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: bold;
+
+  transition: 0.2s ease;
+}
+
+.number-btn:hover {
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+.number-btn.active {
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+.number-btn:active {
+  transform: scale(0.95); /* ✅ click feedback */
+}
+
+
+/* ================= RESULT TEXT ================= */
+
+.result-text {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.result-text.info {
+  color: var(--blue)
+}
+
+.result-text.success {
+  color: var(--green)
+}
+
+.result-text.error {
+  color: var(--red)
+}
+
+
+
+/* ================= BACK BUTTON ================= */
+
+.loginBack-button{
+  display: flex;
+  align-items: center;
+}
+
+.loginBack-button button {
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+
+
+
+
+/* ================= DICE BOX ================= */
+
+.dicebox-container{
+  min-height: 450px;
+  max-width: 250px;
+  width:100%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* ✅ added */
+  gap:48px;
+}
+
+.dicebox-container img{
+  display: block;
+  max-width: 100%; /* ✅ improved */
+  height: auto;
+  cursor: pointer;
+}
+
+.dicebox-image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dicebox-image p{
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.dicebox-buttons{
+  max-width: 220px;
+  width: 100%;
+  min-height: 112px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* background-color: brown; */
+}
+
+.dicebox-buttons button{
+  min-height: 44px;
+  max-width: 220px;
+  width:100%;
+  border-radius: 8px;
+  border: 1px solid black;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.dicebox-buttons button:hover{
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+
+/* ================= RULES ================= */
+
+.rules-container{
+  background-color: var(--rules);
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  position: relative;
+
+  max-width: 600px; /* ✅ added */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.rules-container button{
+  position:absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--text-color);
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.rules{
+  display: flex;
+  flex-direction: column;
+  gap:4px;
+}
+
+.rules p{
+  margin:0;
+}
+

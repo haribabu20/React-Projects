@@ -1,5 +1,4 @@
 import React from 'react'
-import '../App.css'
 import Score from './Score'
 import Number from './Number'
 import Button from './Button'
@@ -17,7 +16,7 @@ const Header = ({selected, setSelected, score, setScore, handleBackToMenu, resul
       <section>
         <ThemeToggle/>
       </section>
-      <section className='loginBack-button'>
+      <section>
         <Button text='Back to Login' onClick={handleBackToMenu} outline/>
       </section>
       
