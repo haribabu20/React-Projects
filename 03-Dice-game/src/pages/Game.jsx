@@ -3,6 +3,8 @@ import Header from '../components/Header'
 import DiceBox from '../components/DiceBox'
 import Rules from '../components/Rules'
 import { useNavigate } from 'react-router-dom'
+import ThemeToggle from '../components/ThemeToggle';
+import '../styles/gamePage.css'
 
 const Game = () => {
 

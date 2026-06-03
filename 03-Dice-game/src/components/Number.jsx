@@ -2,7 +2,7 @@ const Number = ({ selected, setSelected, result }) => {
   return (
     <div className='number-container'>
 
-      <div className='button-container'>
+      <div className='number_button-container'>
         {[1,2,3,4,5,6].map((num) => (
           <button
             key={num}

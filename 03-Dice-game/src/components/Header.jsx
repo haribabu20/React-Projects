@@ -1,8 +1,8 @@
 import React from 'react'
-import '../App.css'
 import Score from './Score'
 import Number from './Number'
 import Button from './Button'
+import ThemeToggle from './ThemeToggle'
 
 const Header = ({selected, setSelected, score, setScore, handleBackToMenu, result}) => {
   return (
@@ -13,7 +13,10 @@ const Header = ({selected, setSelected, score, setScore, handleBackToMenu, resul
       <section className='number-card'>
         <Number selected={selected} setSelected={setSelected} result={result}/>
       </section>
-      <section className='loginBack-button'>
+      <section>
+        <ThemeToggle/>
+      </section>
+      <section>
         <Button text='Back to Login' onClick={handleBackToMenu} outline/>
       </section>
       
