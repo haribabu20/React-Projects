@@ -1,5 +1,6 @@
-const bcrypt = require("bcryptjs");
 const User = require("../models/User");
+const bcrypt = require("bcryptjs");
+const jwt = require('jsonwebtoken');
 
 // This function handles registeration request
 const registerUser = async (req, res) => {
@@ -37,24 +38,63 @@ const registerUser = async (req, res) => {
   }
 };
 
+
+// This function handles Login request
+const loginUser = async (req, res) => {
+  try{
+    const {email, password} = req.body;
+
+    const user = await User.findOne({email}); // user variable now has complete user record from DB.
+
+    if(!user){
+      return res.status(400).json({
+        message: 'User not found, Please register.',
+      });
+    }
+
+    const isPasswordMatching = await bcrypt.compare(password, user.password);
+
+    if(!isPasswordMatching){
+      return res.status(400).json({
+        message: 'Invalid Credentials',
+      });
+    }
+
+    // token generation
+    const token = jwt.sign(
+      {
+        userId: user._id,
+      },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: '1d',
+      }
+    )
+
+    // passing token as response
+    return res.status(200).json({
+      message: 'Login Successful',
+      token,
+    })
+
+  }catch(error){
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+}
+
+
 module.exports = {
   registerUser,
+  loginUser
 };
+
 
 /*
 
-Example payload for user with status code:
+  const user = await User.findOne({email});
 
-1.
-{
-    "message": "User registered successfully",
-    "user": {
-        "_id": "6854abc123",
-        "name": "Hari",
-        "email": "hari@gmail.com",
-        "password": "123456"
-    }
-}
+  here user value is full object payload value of the user whose email is given above.
 
-2. 201 created
 */
