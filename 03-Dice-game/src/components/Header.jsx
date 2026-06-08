@@ -3,8 +3,10 @@ import Score from './Score'
 import Number from './Number'
 import Button from './Button'
 import ThemeToggle from './ThemeToggle'
+import {useNavigate} from 'react-router-dom'
 
 const Header = ({selected, setSelected, score, setScore, handleBackToMenu, result}) => {
+  const navigate = useNavigate();
   return (
     <header className='header-container'>
       <section className='score-card'>
@@ -17,7 +19,10 @@ const Header = ({selected, setSelected, score, setScore, handleBackToMenu, resul
         <ThemeToggle/>
       </section>
       <section>
-        <Button text='Back to Login' onClick={handleBackToMenu} outline/>
+        <Button text='Profile' onClick={()=>navigate('/profile')}/>
+      </section>
+      <section>
+        <Button text='Logout' onClick={handleBackToMenu} outline/>
       </section>
       
     </header>
