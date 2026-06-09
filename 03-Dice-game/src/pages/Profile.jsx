@@ -1,8 +1,6 @@
-import React from 'react'
 import {useState, useEffect} from 'react'
-import { API_URL } from '../config/api';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import api  from '../config/api';
 
 const Profile = () => {
 
@@ -13,6 +11,7 @@ const Profile = () => {
     try{
       const token = localStorage.getItem('token');
 
+      /*
       const response = await axios.get(
         `${API_URL}/api/auth/profile`,
         {
@@ -21,12 +20,16 @@ const Profile = () => {
           },
         }
       )
+      */
+
+      // above way of getting response is simplied using interceptors.
+      const response = await api.get('/api/auth/profile');
 
       setUser(response.data);
 
       
     }catch(error){
-      console.log(error.message);
+      console.log(error.response?.data?.message || error.message);
     }
   }
 
