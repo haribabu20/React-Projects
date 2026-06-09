@@ -1,12 +1,13 @@
 require('dotenv').config(); // fetch details from .env and loads them into "process.env"
-console.log("Mongo URI:", process.env.MONGO_URI);
 
 const express = require('express');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
+const cors = require('cors')
 
 const app = express();
 app.use(express.json()); // important
+app.use(cors());
 
 connectDB();
 

@@ -8,7 +8,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleLoginButton = () => {
-      navigate('/game')
+      navigate('/login')
   }
 
   return(
