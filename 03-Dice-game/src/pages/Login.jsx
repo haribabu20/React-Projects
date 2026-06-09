@@ -3,6 +3,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import { API_URL } from '../config/api';
 import {useNavigate} from 'react-router-dom'
+import api from '../config/api';
+import { login } from '../services/AuthService';
 
 const Login = () => {
 
@@ -15,13 +17,12 @@ const Login = () => {
     e.preventDefault();
 
     try{
-      const response = await axios.post(
-        `${API_URL}/api/auth/login`,
-        {
-          email,
-          password
-        }
-      );
+      //api handling
+      const response = await login({
+        email,
+        password
+      });
+      
       localStorage.setItem('token',response.data.token); // store token in localstorage
       navigate('/game')// and move to profile tab
 

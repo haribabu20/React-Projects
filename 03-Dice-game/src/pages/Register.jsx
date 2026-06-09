@@ -2,6 +2,7 @@ import axios from 'axios';
 import {useState} from 'react'
 import { API_URL } from '../config/api';
 import { useNavigate } from 'react-router-dom';
+import { register } from '../services/AuthService';
 
 const Register = () => {
 
@@ -20,14 +21,11 @@ const Register = () => {
 
   const registerUser = async () => {
     try {
-      const response = await axios.post(
-        `${API_URL}/api/auth/register`,
-        {
-          name,
-          email,
-          password
-        }
-      )
+      const response = await register({
+        name,
+        email,
+        password
+      })
       setResMessage(response.data.message);
 
       setName('');
@@ -39,7 +37,7 @@ const Register = () => {
     }catch(error){
       console.log(error)
       setResMessage(
-        error.response?.data?.message || 'Something Went Wrong'
+        error.response?.data?.message || 'Something Went Wrong, please try later'
       );
     }
   }
