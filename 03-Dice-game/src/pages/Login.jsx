@@ -1,10 +1,7 @@
-import React from 'react'
 import { useState } from 'react';
-import axios from 'axios';
-import { API_URL } from '../config/api';
 import {useNavigate} from 'react-router-dom'
-import api from '../config/api';
 import { login } from '../services/AuthService';
+import UseAuth from '../hooks/UseAuth';
 
 const Login = () => {
 
@@ -12,22 +9,23 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('')
   const navigate = useNavigate();
+  const {setToken} = UseAuth();
 
   const handleLogin = async(e) => {
     e.preventDefault();
-
+    setError('');
     try{
-      //api handling
       const response = await login({
         email,
         password
       });
       
-      localStorage.setItem('token',response.data.token); // store token in localstorage
+      localStorage.setItem('token',response.data.token);
+      setToken(response.data.token);
       navigate('/game')// and move to profile tab
 
     }catch(error){
-      setError(error.response.data.message)
+      setError(error.response?.data?.message || error.message)
     }
   }
   
@@ -57,9 +55,15 @@ const Login = () => {
         </div>
 
         <button type='submit'>Login</button>
-        <button onClick={()=>navigate('/register')}>Register</button>
-
+    
       </form>
+
+      <button 
+        type='button'
+        onClick={()=>navigate('/register')}
+      >
+        Register
+      </button>
 
       {error && <p>{error}</p>}
     </div>
