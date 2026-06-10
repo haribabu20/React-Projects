@@ -1,40 +1,29 @@
 import {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 import api  from '../config/api';
+import UseAuth from '../hooks/UseAuth';
 
 const Profile = () => {
 
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
+  const {setToken} = UseAuth()
+  
   const fetchProfile = async () => {
     try{
-      const token = localStorage.getItem('token');
-
-      /*
-      const response = await axios.get(
-        `${API_URL}/api/auth/profile`,
-        {
-          headers: {
-            Authorization: `bearer ${token}`,
-          },
-        }
-      )
-      */
-
-      // above way of getting response is simplied using interceptors.
       const response = await api.get('/api/auth/profile');
-
       setUser(response.data);
-
-      
     }catch(error){
       console.log(error.response?.data?.message || error.message);
+    } finally{
+      setLoading(false)
     }
   }
 
   const handleLogout = () => {
     localStorage.removeItem('token');
+    setToken(null);
     navigate('/login');
   }
 
@@ -44,8 +33,13 @@ const Profile = () => {
 
   // calling the function when page loads
   useEffect(()=>{
-    fetchProfile()
+    fetchProfile();
   },[])
+
+  // having to place this from main return
+  if(loading){
+    return <p>Loading..</p>
+  }
 
   return (
     <div>
